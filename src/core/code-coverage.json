@@ -1,0 +1,25 @@
+{
+    "all": true,
+    "check-coverage": false,
+    "exit": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "report-dir": "dist/views/codeCoverage",
+    "skip-full": false,
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "**/node_modules/*",
+      "**/reportCoverage/*",
+      "**/codeCoverage/*",
+      "**/tests/**",
+      "**/swaggerDoc/*",
+      "**/request-schema/*",
+      "**/config/**",
+      "constCollections.js",
+      "server.js"
+    ]
+  }

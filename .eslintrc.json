@@ -1,0 +1,48 @@
+{
+    "env": {
+      "es6": true,
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": ["typescript", "plugin:sonarjs/recommended", "prettier"],
+    "parser": "@typescript-eslint/parser",
+    "ignorePatterns": ["**/migrations/*", "**/typings/*", "**/dist/*"],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": ["error"],
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/no-empty-interface": "off",
+      "@typescript-eslint/ban-types": [
+        "error",
+        {
+          "types": {
+            // un-ban a type that's banned by default
+            "{}": false,
+            "Object": false,
+            "Function": false
+          },
+          "extendDefaults": true
+        }
+      ],
+  
+      "no-shadow":"error",
+      "no-return-assign":"error",
+      "no-return-await":"error",
+      "no-useless-return":"error",
+      "no-unreachable":"error",
+      "sonarjs/no-duplicate-string": "off",
+      "sonarjs/cognitive-complexity": "error",
+      "sonarjs/no-nested-template-literals": "error",
+      "sonarjs/prefer-immediate-return":"error",
+      "sonarjs/no-identical-functions":"error",
+  
+      //
+      "@typescript-eslint/no-var-requires": 0,
+      "no-constant-condition":0,
+      "prettier/prettier": "error"
+    },
+    "plugins": ["prettier","sonarjs"]
+  }
+  

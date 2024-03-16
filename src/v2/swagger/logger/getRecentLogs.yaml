@@ -1,0 +1,154 @@
+openapi: 3.0.0
+info:
+  title: API service
+  version: 1.0.0
+paths:
+  /v1/logger/getRecentLogs:
+    get:
+      tags:
+        - V1-logger
+      summary: List of Recent Logs
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: count
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: startDate
+          in: query
+          schema:
+            type: string
+          example: '2023-01-17T07:35:54.488Z'
+        - name: endDate
+          in: query
+          schema:
+            type: string
+          example: '2023-01-18T23:35:54.488Z'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "file": [
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T12:48:44.255Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T08:03:19.449Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T08:02:57.742Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:56:23.771Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:55:00.118Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:54:37.630Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:54:08.228Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:53:09.130Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:52:25.864Z"
+                        },
+                        {
+                            "level": "error",
+                            "message": "{\"method\":\"GET\",\"url\":\"/error\",\"statusCode\":500,\"errorMessage\":\"Error thrown successful V1\",\"errorStack\":{},\"remoteAddress\":\"::ffff:127.0.0.1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-17T07:51:38.166Z"
+                        }
+                    ],
+                    "dailyRotateFile": [
+                        {
+                            "level": "info",
+                            "message": "{\"method\":\"GET\",\"url\":\"/logger/getRecentLogs?count=10&startDate=2023-01-17T07:35:54.488Z&endDate=2023-01-19T23:35:54.488Z\",\"statusCode\":200,\"remoteAddress\":\"::1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-18T04:56:01.228Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "{\"method\":\"GET\",\"url\":\"/logger/getRecentLogs?count=10&startDate=2023-01-17T07:35:54.488Z&endDate=2021-01-18\",\"statusCode\":200,\"remoteAddress\":\"::1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-18T04:55:43.751Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "{\"method\":\"GET\",\"url\":\"/logger/getRecentLogs?count=10&startDate=2023-01-16&endDate=2021-01-18\",\"statusCode\":200,\"remoteAddress\":\"::1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-18T04:54:28.738Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "{\"method\":\"GET\",\"url\":\"/logger/getRecentLogs?count=10&startDate=2023-01-17T00:00:00:000Z&endDate=2021-01-18\",\"statusCode\":200,\"remoteAddress\":\"::1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-18T04:54:21.350Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "OPEN CONNECTION to mongo server.",
+                            "timestamp": "2023-01-18T04:53:51.426Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "CONNECTED to mongo server.",
+                            "timestamp": "2023-01-18T04:53:51.424Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "🚀 API service listening on port 1337",
+                            "timestamp": "2023-01-18T04:53:51.407Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "======= ENV: local =======",
+                            "timestamp": "2023-01-18T04:53:51.406Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "{\"method\":\"GET\",\"url\":\"/logger/getRecentLogs?count=10&startDate=2023-01-17&endDate=2021-01-18\",\"statusCode\":200,\"remoteAddress\":\"::1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-18T04:53:13.596Z"
+                        },
+                        {
+                            "level": "info",
+                            "message": "{\"method\":\"GET\",\"url\":\"/logger/getRecentLogs?count=10&startDate=2023-01-18&endDate=2021-01-18\",\"statusCode\":200,\"remoteAddress\":\"::1\",\"remoteFamily\":\"IPv6\"}",
+                            "timestamp": "2023-01-18T04:53:06.804Z"
+                        }
+                    ]
+                }
+
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                success: false
+                message: Your session expired. Please login again.
+                data: null
+                error: null
